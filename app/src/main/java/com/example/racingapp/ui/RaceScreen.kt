@@ -1,5 +1,6 @@
 package com.example.racingapp.ui
 
+import android.graphics.ColorMatrix
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -15,12 +16,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.racingapp.RacingApp
 import com.example.racingapp.data.model.RaceHorse
 import com.example.racingapp.presentation.viewmodel.RaceViewModel
+import com.example.racingapp.ui.theme.Green1
+import com.example.racingapp.ui.theme.Red1
 
 @Composable
 fun RaceScreen() {
@@ -80,7 +84,7 @@ fun RaceScreen() {
                             Text(
                                 text = countdownValue.toString(),
                                 style = MaterialTheme.typography.displayLarge,
-                                color = Color.Red,
+                                color = Red1,
                                 modifier = Modifier.align(Alignment.Center)
                             )
                         }
@@ -89,7 +93,7 @@ fun RaceScreen() {
                             Text(
                                 text = "СТАРТ!",
                                 style = MaterialTheme.typography.displayLarge,
-                                color = Color.Red,
+                                color = Red1,
                                 modifier = Modifier.align(Alignment.Center)
                             )
                         }
@@ -98,7 +102,7 @@ fun RaceScreen() {
                             Text(
                                 text = "Победитель: $winner",
                                 style = MaterialTheme.typography.titleLarge,
-                                color = Color.Green,
+                                color = Green1,
                                 modifier = Modifier.align(Alignment.Center)
                             )
                         }
@@ -160,7 +164,7 @@ fun RaceTrack(
                 .align(Alignment.CenterEnd)
                 .width(4.dp)
                 .fillMaxHeight()
-                .background(Color.Red)
+                .background(Red1)
         )
 
         Image(
@@ -173,7 +177,7 @@ fun RaceTrack(
                     if (isWinner)
                         Modifier
                             .border(3.dp,
-                                Color.Green,
+                                Green1,
                                 shape = MaterialTheme.shapes.small)
                     else Modifier
                 )
